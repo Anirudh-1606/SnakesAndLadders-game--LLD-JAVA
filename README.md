@@ -1,5 +1,6 @@
-## Run PLayGame.java
-with the command javac PlayGame.java and PLayGame.java
+## PLayGame.java
+`javac PlayGame.java` 
+`PLayGame.java`
 
 # SnakesAndLadders-game--LLD-JAVA
 Low level design for Snakes and Ladders game using *OOPS Principles*.
