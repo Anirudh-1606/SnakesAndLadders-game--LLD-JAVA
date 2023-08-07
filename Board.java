@@ -30,6 +30,19 @@ public class Board {
         }}
 
     public void startGame() {
+        // ... lógica de juego existente ...
+
+        if (currLoc == boardSize) {
+            System.out.println();
+            System.out.println(p.getName() + " won the Game!!");
+            notifyObservers(p);
+            break;
+        }
+       // ... resto de la lógica de juego existente ...
+    }}
+
+
+    public void startGame() {
         while (true) {
             Player p = playerTurns.poll();
             int currLoc = p.getLocation();
