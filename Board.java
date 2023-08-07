@@ -7,15 +7,35 @@ public class Board {
     private HashMap<Integer, Ladders> ladders;
     private int boardSize;
 
+    
+public class Board {
+    private Dice dice;
+    private HashMap<Integer, Snakes> snakes;
+    private HashMap<Integer, Ladders> ladders;
+    private int boardSize;
+
+    private PlayerIterator playerIterator;
+
     Board(int boardSize, Dice dice, HashMap<Integer, Snakes> snakes, HashMap<Integer, Ladders> ladders,
             Queue<Player> playerTurns) {
         this.boardSize = boardSize;
         this.dice = dice;
         this.snakes = snakes;
         this.ladders = ladders;
-        this.playerTurns = playerTurns;
 
+        playerIterator = new PlayerQueueIterator(playerTurns);
     }
+
+    public void startGame() {
+        while (playerIterator.hasNext()) {
+            Player p = playerIterator.next();
+            int currLoc = p.getLocation();
+            int nextLoc = currLoc + dice.rollDice();
+            // Resto del código sin cambios.
+        }
+    }
+}
+
 
     public void startGame() {
         while (true) {
