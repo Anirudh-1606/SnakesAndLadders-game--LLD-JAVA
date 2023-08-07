@@ -18,7 +18,7 @@ public class PlayGame {
 
         // --Dice object
         // SingleDiceLogic object to be used to use a conditional dice.
-        Dice dice = new Dice(nDice);
+       Dice dice = new SingleLogicDiceAdapter(new SingleLogicDice());
 
         // Snakes Input
         System.out.println("Enter No of Snakes");
