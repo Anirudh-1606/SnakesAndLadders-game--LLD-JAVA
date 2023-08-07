@@ -8,6 +8,14 @@ public class PlayGame {
 
         System.out.println("Welcome to Snakes and Ladders Game!");
 
+
+        // Crear el observador
+        GameObserver gameEndObserver = new GameEndObserver();
+
+        // Agregar el observador al tablero
+        gameBoard.addObserver(gameEndObserver);
+
+
         // Board Size Input
         System.out.println("Enter Board Size");
         int bSize = in.nextInt();
