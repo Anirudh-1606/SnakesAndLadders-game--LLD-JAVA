@@ -16,6 +16,18 @@ public class Board {
         this.playerTurns = playerTurns;
 
     }
+    private List<GameObserver> observers = new ArrayList<>();
+
+    public void addObserver(GameObserver observer) {
+        observers.add(observer);}
+
+    public void removeObserver(GameObserver observer) {
+        observers.remove(observer);}
+
+    private void notifyObservers(Player player) {
+        for (GameObserver observer : observers) {
+            observer.update(player);
+        }}
 
     public void startGame() {
         while (true) {
